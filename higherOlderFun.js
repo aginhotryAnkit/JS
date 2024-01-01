@@ -24,11 +24,11 @@ function calculateCircumFerence(arr){
 // console.log(calculateCircumFerence(radius));
 
 
-//This is the functional approch and based of DYI don't repeat yourself
-function calculate(arr,logic){
+//This is the functional approach and based of DYI don't repeat yourself
+Array.prototype.calculate = function (logic){
     let result = [];
-    for (let i = 0; i < arr.length; i++) {
-        const element = arr[i];
+    for (let i = 0; i < this.length; i++) {
+        const element = this[i];
         result.push(logic(element));
     }
     return result;
@@ -42,7 +42,7 @@ var circumFerence = function (ele){
     return 2*Math.PI*ele*ele;
 }
 
-console.log(calculate(radius,circumFerence));
+console.log(radius.calculate(circumFerence));
 
 
 
