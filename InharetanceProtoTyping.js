@@ -3,16 +3,20 @@
 let person = {
     "name":"ankit",
     "class":"BCA",
-    "rollNo":"1190211055"
+    "rollNo":"1190211055",
+    intro: function (){
+        return (`My name is ${this.name}. I'm the student of ${this.class}. My roll number is ${this.rollNo}`);
+    }
 }
 
 let student = {
-    "college_name":"babu banaras das university lucknow"
+    "name":"kajal"
 }
 
 student.__proto__ = person; //here inhabitance comes into the picture
 
-console.log(student.rollNo); //output ankit
+console.log(person.intro()); //output ankit
+console.log(student.name); //output ankit
 
 
 /**student haven't property called name with we use it how its it because javascript engine
