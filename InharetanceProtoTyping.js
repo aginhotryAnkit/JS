@@ -19,6 +19,15 @@ console.log(person.intro()); //output ankit
 console.log(student.name); //output ankit
 
 
+Function.prototype.hello = function (){
+    return "hello world";
+};
+
+function testFun(){
+
+}
+console.log(testFun.hello()); //hello world is called
+
 /**student haven't property called name with we use it how its it because javascript engine
 try to find name current object when its not get its goes to the prototype to prototype anf try to get
 and this is called prototype chain and end up with null 
