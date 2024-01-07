@@ -1,10 +1,10 @@
 // Here we are going to learn about the map filter and reduce function. 
 
 //Map Function 
-let arr = [10,20,30,40,50,5,7];
+let arr = [10, 20, 30, 40, 50, 5, 7];
 
-let mappedArr = arr.map((x)=> {
-    return x*2;
+let mappedArr = arr.map((x) => {
+    return x * 2;
 });
 
 //map function is used to manupulate each elements and apply a user defined function logic on it. 
@@ -16,7 +16,7 @@ let mappedArr = arr.map((x)=> {
 
 //using these three argument of array
 
-let newArr = arr.map(function (ele, index, arr){
+let newArr = arr.map(function (ele, index, arr) {
     // console.log("element :",ele);
     // console.log("index :",index);
     // console.log("orginal array :",arr);
@@ -32,8 +32,8 @@ let newArr = arr.map(function (ele, index, arr){
 //or grater than 2, 3 or etc like situvation where we are using filter 
 //function 
 
-let evenArr = arr.filter((x)=>x%2==0);
-let oddNumber = arr.filter((x)=>x%2!=0);
+let evenArr = arr.filter((x) => x % 2 == 0);
+let oddNumber = arr.filter((x) => x % 2 != 0);
 //filter only listen the True or False if the values is true iw will be inserted if false it's not
 //so make a function or logic like that your function should be return true of false for the element
 //which is passed as and argument in the callback function of the filter
@@ -47,9 +47,9 @@ let oddNumber = arr.filter((x)=>x%2!=0);
 // reduce accept two argument first is callback and second one is the inti
 // value of the accumulater that is passed as an first argument in the callback function
 
-let sum = arr.reduce(function (accumulater, element, index, array){
-    return accumulater +=element;
-},0);
+let sum = arr.reduce(function (accumulater, element, index, array) {
+    return accumulater += element;
+}, 0);
 
 //accumulater is nothing is a value that is remain same in the entire of the 
 //callback function no matter if its run for multiple values in the array
@@ -60,3 +60,24 @@ let sum = arr.reduce(function (accumulater, element, index, array){
 
 console.log(arr);
 console.log(sum);
+
+const users = [
+    { firstname: "ankit", lastname: "aginhotry", age: 26 },
+    { firstname: "kajal", lastname: "jaiswal", age: 75 },
+    { firstname: "narmada", lastname: "aginhotry", age: 50 },
+    { firstname: "yuvraj", lastname: "aginhotry", age: 26 },
+];
+
+var count = 0;
+
+let agerFilterUsers = users.reduce((acc,ele, index) => {
+    
+        if(acc[ele.age]){
+            acc[ele.age] = ++acc[ele.age];
+        } else {
+            acc[ele.age] = 1;
+        }
+    return acc;
+},{});
+
+console.log(agerFilterUsers);
